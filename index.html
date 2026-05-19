@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sterzin Stables | New York Farm Animal Sanctuary</title>
+    <meta name="description" content="Sterzin Stables is a husband-and-wife-run farm animal sanctuary in New York giving rescued farm animals a safe, permanent home." />
+    <meta name="keywords" content="farm animal sanctuary NY, New York farm sanctuary, sponsor rescued farm animals, animal sanctuary livestream, donate to farm animal rescue, husband and wife animal sanctuary" />
+    <meta property="og:title" content="Sterzin Stables — Every Rescue Deserves a Forever Home" />
+    <meta property="og:description" content="A husband-and-wife sanctuary in New York. Sponsor a rescued cow, goat, or pig and follow every rescue, every build, every second chance." />
+    <meta property="og:image" content="images/sanctuary-hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sterzin Stables — Every Rescue Deserves a Forever Home" />
+    <meta name="twitter:description" content="Sponsor Mabel, June, or Otis and help two people keep a promise." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --charcoal: #080b09;
+        --charcoal-2: #0f1410;
+        --charcoal-3: #172019;
+        --cream: #f5ebd6;
+        --muted: rgba(245, 235, 214, 0.62);
+        --soft: rgba(245, 235, 214, 0.10);
+        --forest: #4e7240;
+        --forest-light: #6f9558;
+        --hay: #c9973e;
+        --hay-light: #e3b566;
+        --barn: #8a3a25;
+        --sunrise: #e87b3a;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        margin: 0;
+        background: var(--charcoal);
+        color: var(--cream);
+        font-family: 'DM Sans', ui-sans-serif, sans-serif;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+      h1, h2, h3, h4, p { margin-top: 0; }
+
+      /* ─── GRAIN OVERLAY ─── */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 100;
+        opacity: 0.032;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 128px 128px;
+      }
+
+      /* ─── HEADER ─── */
+      .header {
+        position: fixed;
+        z-index: 50;
+        inset: 0 0 auto;
+        border-bottom: 1px solid var(--soft);
+        background: rgba(8, 11, 9, 0.82);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      .nav {
+        max-width: 1200px;
+        height: 86px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brand-logo {
+        height: 72px;
+        width: auto;
+        flex-shrink: 0;
+        filter: invert(1) brightness(1.05) sepia(0.2) saturate(0.8);
+      }
+
+      .brand-title {
+        display: none;
+      }
+
+      .brand-subtitle {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 28px;
+        color: rgba(245, 235, 214, 0.65);
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .nav-links a { transition: color 150ms; }
+      .nav-links a:hover { color: var(--cream); }
+
+      /* ─── BUTTONS ─── */
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 48px;
+        padding: 0 24px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        background: var(--hay);
+        color: var(--charcoal);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        cursor: pointer;
+        transition: transform 180ms cubic-bezier(.22,.68,0,1.4), background 160ms, box-shadow 160ms;
+        white-space: nowrap;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+        background: var(--hay-light);
+        box-shadow: 0 8px 32px rgba(201, 151, 62, 0.28);
+      }
+
+      .button:active { transform: translateY(0); }
+
+      .button.secondary {
+        border-color: rgba(245, 235, 214, 0.22);
+        background: rgba(245, 235, 214, 0.05);
+        color: var(--cream);
+      }
+
+      .button.secondary:hover {
+        border-color: rgba(201, 151, 62, 0.65);
+        background: rgba(201, 151, 62, 0.1);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      }
+
+      .button.ghost {
+        border-color: rgba(245, 235, 214, 0.15);
+        background: transparent;
+        color: rgba(245, 235, 214, 0.65);
+        min-height: 36px;
+        font-size: 11px;
+      }
+
+      .button.ghost:hover {
+        border-color: rgba(245, 235, 214, 0.35);
+        color: var(--cream);
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 20px 80px;
+        overflow: hidden;
+        background-image:
+          linear-gradient(160deg, rgba(8,11,9,0.97) 0%, rgba(8,11,9,0.6) 55%, rgba(8,11,9,0.15) 100%),
+          linear-gradient(0deg, rgba(8,11,9,0.98) 0%, transparent 40%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center 30%;
+      }
+
+      /* animated golden accent line */
+      .hero::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--hay), var(--sunrise), var(--hay), transparent);
+        animation: shimmer 4s ease-in-out infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes shimmer {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.9; }
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        color: var(--hay);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+      }
+
+      .eyebrow::before {
+        content: '';
+        display: block;
+        width: 28px;
+        height: 1px;
+        background: var(--hay);
+        flex-shrink: 0;
+      }
+
+      h1 {
+        margin-bottom: 28px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(52px, 11vw, 110px);
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.03em;
+      }
+
+      h1 em {
+        font-style: italic;
+        color: var(--hay);
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(32px, 6vw, 56px);
+        font-weight: 700;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-family: 'Playfair Display', serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .lead {
+        max-width: 640px;
+        color: rgba(245, 235, 214, 0.75);
+        font-size: clamp(17px, 3.5vw, 21px);
+        font-weight: 300;
+        line-height: 1.6;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      /* ─── SOCIAL BAR ─── */
+      .social-bar {
+        background: var(--charcoal-3);
+        border-top: 1px solid var(--soft);
+        border-bottom: 1px solid var(--soft);
+        padding: 0 20px;
+      }
+
+      .social-bar-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .social-label {
+        color: rgba(245, 235, 214, 0.45);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .social-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--soft);
+        border-radius: 3px;
+        color: rgba(245, 235, 214, 0.55);
+        font-size: 14px;
+        transition: border-color 150ms, color 150ms, background 150ms;
+        text-decoration: none;
+      }
+
+      .social-icon:hover {
+        border-color: rgba(201, 151, 62, 0.5);
+        color: var(--hay);
+        background: rgba(201, 151, 62, 0.07);
+      }
+
+      .live-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border-radius: 2px;
+        background: rgba(232, 55, 55, 0.15);
+        border: 1px solid rgba(232, 55, 55, 0.3);
+        color: #f06060;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .live-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #f06060;
+        animation: pulse 1.8s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.7); }
+      }
+
+      /* ─── IMPACT BAND ─── */
+      .impact {
+        border-bottom: 1px solid var(--soft);
+        background: var(--charcoal-2);
+        padding: 0 20px;
+      }
+
+      .impact-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .impact-item {
+        padding: 28px 24px;
+        border-right: 1px solid var(--soft);
+        border-bottom: 1px solid var(--soft);
+      }
+
+      .impact-item:nth-child(2n) { border-right: none; }
+
+      .impact-num {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 38px;
+        font-weight: 700;
+        color: var(--hay);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .impact-label {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(245, 235, 214, 0.55);
+      }
+
+      /* ─── SECTIONS ─── */
+      .section {
+        padding: 88px 20px;
+        background: var(--charcoal);
+      }
+
+      .section.alt {
+        background: var(--charcoal-2);
+      }
+
+      .section-heading {
+        max-width: 720px;
+        margin-bottom: 48px;
+      }
+
+      .section-heading p {
+        color: var(--muted);
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.7;
+        margin-bottom: 0;
+      }
+
+      /* ─── FEATURED RESCUE ─── */
+      .featured {
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 8px;
+        background: var(--charcoal-2);
+      }
+
+      .featured-image {
+        min-height: 400px;
+        background-image:
+          linear-gradient(0deg, rgba(8,11,9,0.9), transparent 55%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .featured-image-tag {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        padding: 6px 12px;
+        background: rgba(8,11,9,0.7);
+        border: 1px solid rgba(201,151,62,0.4);
+        color: var(--hay);
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        backdrop-filter: blur(8px);
+        border-radius: 2px;
+      }
+
+      .featured-copy {
+        padding: 36px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      /* ─── CARDS ─── */
+      .card {
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 8px;
+        background: rgba(245, 235, 214, 0.03);
+        transition: border-color 200ms, transform 200ms, box-shadow 200ms;
+      }
+
+      .card:hover {
+        border-color: rgba(201, 151, 62, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      }
+
+      .card-media {
+        position: relative;
+        min-height: 260px;
+        background-image:
+          linear-gradient(0deg, rgba(8,11,9,0.88), transparent 55%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-body {
+        padding: 24px;
+      }
+
+      .meta {
+        color: rgba(245, 235, 214, 0.45);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        margin-bottom: 6px;
+      }
+
+      .card p, .featured-copy p, .story-copy p {
+        color: rgba(245, 235, 214, 0.62);
+        line-height: 1.7;
+        font-weight: 300;
+        font-size: 15px;
+      }
+
+      /* ─── PROGRESS ─── */
+      .progress-wrap {
+        margin: 16px 0 10px;
+      }
+
+      .progress {
+        height: 5px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(245, 235, 214, 0.08);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--hay), var(--hay-light));
+        transition: width 1.2s cubic-bezier(.22,.68,0,1);
+      }
+
+      .progress-info {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 7px;
+        font-size: 12px;
+        color: rgba(245, 235, 214, 0.45);
+      }
+
+      /* ─── LIVESTREAM ─── */
+      .cam {
+        min-height: 200px;
+        display: grid;
+        place-items: center;
+        position: relative;
+        background-image:
+          linear-gradient(rgba(8,11,9,0.5), rgba(8,11,9,0.75)),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .play-btn {
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: rgba(245, 235, 214, 0.9);
+        color: var(--charcoal);
+        font-size: 20px;
+        transition: transform 200ms, background 200ms;
+        cursor: pointer;
+      }
+
+      .play-btn:hover {
+        transform: scale(1.1);
+        background: var(--cream);
+      }
+
+      .cam-label {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+      }
+
+      /* ─── TIERS ─── */
+      .tier {
+        transition: border-color 200ms, transform 200ms, box-shadow 200ms;
+      }
+
+      .tier.featured-tier {
+        border-color: rgba(201, 151, 62, 0.5);
+        background: rgba(201, 151, 62, 0.06);
+        position: relative;
+      }
+
+      .tier.featured-tier::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: -1px; left: 50%;
+        transform: translateX(-50%);
+        background: var(--hay);
+        color: var(--charcoal);
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        padding: 3px 14px;
+        border-radius: 0 0 4px 4px;
+      }
+
+      .price {
+        margin: 14px 0;
+        font-family: 'Playfair Display', serif;
+        font-size: 52px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        line-height: 1;
+        color: var(--cream);
+      }
+
+      .price small {
+        color: rgba(245, 235, 214, 0.45);
+        font-size: 15px;
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+
+      .tier-perks {
+        list-style: none;
+        margin: 0 0 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .tier-perks li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 13px;
+        color: rgba(245, 235, 214, 0.62);
+        line-height: 1.5;
+      }
+
+      .tier-perks li::before {
+        content: '✓';
+        color: var(--forest-light);
+        font-weight: 700;
+        flex-shrink: 0;
+        margin-top: 0px;
+      }
+
+      /* ─── STORY ─── */
+      .story-grid {
+        display: grid;
+        gap: 48px;
+        align-items: center;
+      }
+
+      .story-image {
+        min-height: 480px;
+        border: 1px solid var(--soft);
+        border-radius: 8px;
+        background-image:
+          linear-gradient(0deg, rgba(8,11,9,0.8), transparent 40%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .story-image-quote {
+        position: absolute;
+        bottom: 28px;
+        left: 28px;
+        right: 28px;
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 18px;
+        color: rgba(245, 235, 214, 0.88);
+        line-height: 1.5;
+        border-left: 2px solid var(--hay);
+        padding-left: 16px;
+      }
+
+      /* ─── EMAIL ─── */
+      .email-box {
+        display: grid;
+        gap: 12px;
+        max-width: 560px;
+      }
+
+      input {
+        min-height: 52px;
+        width: 100%;
+        border: 1px solid rgba(245, 235, 214, 0.16);
+        border-radius: 3px;
+        background: rgba(8, 11, 9, 0.7);
+        color: var(--cream);
+        padding: 0 18px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 15px;
+        transition: border-color 150ms;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: rgba(201, 151, 62, 0.5);
+      }
+
+      input::placeholder { color: rgba(245, 235, 214, 0.35); }
+
+      /* ─── SHARE SECTION ─── */
+      .share-strip {
+        padding: 48px 20px;
+        background: linear-gradient(135deg, rgba(201,151,62,0.08), rgba(78,114,64,0.06));
+        border-top: 1px solid var(--soft);
+        border-bottom: 1px solid var(--soft);
+        text-align: center;
+      }
+
+      .share-strip h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        margin-bottom: 8px;
+      }
+
+      .share-strip p {
+        color: var(--muted);
+        font-size: 16px;
+        margin-bottom: 24px;
+        font-weight: 300;
+      }
+
+      .share-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        border: 1px solid;
+        cursor: pointer;
+        transition: transform 160ms, opacity 160ms;
+        text-decoration: none;
+      }
+
+      .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+      .share-btn.tiktok { background: #010101; border-color: #333; color: #fff; }
+      .share-btn.instagram { background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045); border-color: transparent; color: #fff; }
+      .share-btn.facebook { background: #1877f2; border-color: transparent; color: #fff; }
+      .share-btn.twitter { background: #000; border-color: #333; color: #fff; }
+
+      /* ─── FINAL CTA ─── */
+      .final {
+        text-align: center;
+        padding: 112px 20px;
+        background:
+          linear-gradient(0deg, var(--charcoal) 0%, transparent 100%),
+          linear-gradient(135deg, rgba(201,151,62,0.07), rgba(8,11,9,0) 60%),
+          var(--charcoal-2);
+      }
+
+      .final .lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─── FOOTER ─── */
+      .footer {
+        padding: 60px 20px 100px;
+        border-top: 1px solid var(--soft);
+        background: var(--charcoal);
+        color: rgba(245, 235, 214, 0.5);
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 32px;
+      }
+
+      .footer p { font-size: 14px; font-weight: 300; line-height: 1.7; }
+      .footer a:hover { color: var(--cream); }
+
+      .footer-social {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      /* ─── STICKY DONATE ─── */
+      .sticky-donate {
+        position: fixed;
+        z-index: 40;
+        right: 16px;
+        bottom: 16px;
+        left: 16px;
+      }
+
+      .sticky-donate .button {
+        width: 100%;
+        min-height: 54px;
+        font-size: 13px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      }
+
+      /* ─── REVEAL ANIMATIONS ─── */
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 700ms cubic-bezier(.22,.68,0,1), transform 700ms cubic-bezier(.22,.68,0,1);
+      }
+
+      [data-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-reveal-delay="1"] { transition-delay: 100ms; }
+      [data-reveal-delay="2"] { transition-delay: 200ms; }
+      [data-reveal-delay="3"] { transition-delay: 300ms; }
+
+      /* ─── COUNTER ANIMATION ─── */
+      @keyframes countUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .impact-num { animation: countUp 600ms ease both; }
+
+      /* ─── RESPONSIVE ─── */
+      @media (min-width: 680px) {
+        .cta-row { flex-direction: row; }
+        .email-box { grid-template-columns: 1fr auto; }
+        .grid.two { grid-template-columns: repeat(2, 1fr); }
+        .grid.three { grid-template-columns: repeat(3, 1fr); }
+        .grid.four { grid-template-columns: repeat(2, 1fr); }
+        .featured { display: grid; grid-template-columns: 1.15fr 0.85fr; }
+        .featured-copy { padding: 48px; }
+      }
+
+      @media (min-width: 980px) {
+        .nav-links { display: flex; }
+        .impact-grid { grid-template-columns: repeat(4, 1fr); }
+        .impact-item:nth-child(2n) { border-right: 1px solid var(--soft); }
+        .impact-item:nth-child(4n) { border-right: none; }
+        .grid.four { grid-template-columns: repeat(4, 1fr); }
+        .story-grid { grid-template-columns: 0.95fr 1.05fr; }
+        .sticky-donate { left: auto; width: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+
+      <!-- HEADER -->
+      <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="#top">
+            <img class="brand-logo" src="logo.png" alt="Sterzin Stables Sanctuary" />
+          </a>
+          <div class="nav-links">
+            <a href="#animals">Animals</a>
+            <a href="#watch-live">Watch Live</a>
+            <a href="#rescues">Rescues</a>
+            <a href="#story">Our Story</a>
+            <a href="#support">Support</a>
+          </div>
+          <a class="button secondary" href="#animals">Sponsor</a>
+        </nav>
+      </header>
+
+      <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+          <div class="container hero-copy" data-reveal>
+            <p class="eyebrow">Husband &amp; Wife · New York</p>
+            <h1>Every Rescue<br><em>Deserves</em><br>Forever.</h1>
+            <p class="lead">
+              Sterzin Stables is a farm animal sanctuary built on one promise: rescue doesn't end at intake. Follow every second chance — live.
+            </p>
+            <div class="cta-row">
+              <a class="button" href="#animals">Sponsor an Animal</a>
+              <a class="button secondary" href="#watch-live">&#9654;&nbsp; Watch Live</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- SOCIAL BAR -->
+        <div class="social-bar">
+          <div class="social-bar-inner">
+            <span class="social-label">Follow the sanctuary</span>
+            <div class="social-icons">
+              <span class="live-badge"><span class="live-dot"></span> Live Cams</span>
+              <a href="#" class="social-icon" aria-label="TikTok" title="TikTok">
+                <!-- TikTok icon -->
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram" title="Instagram">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube" title="YouTube">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Facebook" title="Facebook">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMPACT NUMBERS -->
+        <section class="impact">
+          <div class="impact-grid">
+            <div class="impact-item" data-reveal>
+              <span class="impact-num" id="counter-animals">12</span>
+              <span class="impact-label">Animals Rescued</span>
+            </div>
+            <div class="impact-item" data-reveal data-reveal-delay="1">
+              <span class="impact-num">100%</span>
+              <span class="impact-label">Permanent Homes</span>
+            </div>
+            <div class="impact-item" data-reveal data-reveal-delay="2">
+              <span class="impact-num">4</span>
+              <span class="impact-label">Live Cams Coming</span>
+            </div>
+            <div class="impact-item" data-reveal data-reveal-delay="3">
+              <span class="impact-num" id="counter-donors">31</span>
+              <span class="impact-label">Monthly Donors</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEATURED RESCUE -->
+        <section id="rescues" class="section">
+          <div class="container">
+            <article class="featured" data-reveal>
+              <div class="featured-image" aria-label="Featured rescue image">
+                <span class="featured-image-tag">Featured Rescue</span>
+              </div>
+              <div class="featured-copy">
+                <p class="eyebrow">Latest Story</p>
+                <h2>Mabel's First Winter Safe</h2>
+                <p>
+                  A senior cow, a hard freeze, and the slow work of earning trust one morning at a time. Recovery isn't a single rescue day — it's every quiet morning after.
+                </p>
+                <p>Mabel is now thriving. This is what monthly support makes possible.</p>
+                <div class="cta-row">
+                  <a class="button" href="#support">Sponsor Mabel</a>
+                  <a class="button secondary" href="#animals">Meet the Animals</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- WATCH LIVE -->
+        <section id="watch-live" class="section alt">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Watch Live</p>
+              <h2>The sanctuary, unfolding in real time.</h2>
+              <p>Four cameras. Morning feedings, barn check-ins, pasture hours, and quiet nights. This is transparency donors deserve to see.</p>
+            </div>
+            <div class="grid four">
+              <article class="card" data-reveal>
+                <div class="cam">
+                  <span class="cam-label"><span class="live-badge"><span class="live-dot"></span> Live</span></span>
+                  <span class="play-btn">&#9654;</span>
+                </div>
+                <div class="card-body"><h3>Barn Cam</h3><p>Inside the main barn — mornings and nights.</p></div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="1">
+                <div class="cam">
+                  <span class="cam-label"><span class="live-badge"><span class="live-dot"></span> Soon</span></span>
+                  <span class="play-btn">&#9654;</span>
+                </div>
+                <div class="card-body"><h3>Pasture Cam</h3><p>Grazing, playing, and just being animals.</p></div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="2">
+                <div class="cam">
+                  <span class="cam-label"><span class="live-badge"><span class="live-dot"></span> Soon</span></span>
+                  <span class="play-btn">&#9654;</span>
+                </div>
+                <div class="card-body"><h3>Feeding Cam</h3><p>Morning and evening care, every day.</p></div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="3">
+                <div class="cam">
+                  <span class="cam-label"><span class="live-badge"><span class="live-dot"></span> Soon</span></span>
+                  <span class="play-btn">&#9654;</span>
+                </div>
+                <div class="card-body"><h3>Night Cam</h3><p>Peaceful nights — proof they're safe.</p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ANIMALS -->
+        <section id="animals" class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Meet the Animals</p>
+              <h2>Sponsor the daily care behind every second chance.</h2>
+              <p>Each sponsorship covers feed, bedding, vet support, and the invisible work of sanctuary care — for life.</p>
+            </div>
+            <div class="grid three">
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Cow · Available for Sponsorship</p>
+                  <h3>Mabel</h3>
+                  <p>A gentle senior cow learning that quiet mornings can be safe.</p>
+                  <div class="progress-wrap">
+                    <div class="progress"><span style="width: 0%" data-width="61%"></span></div>
+                    <div class="progress-info"><span>11 sponsors</span><span>Goal: $450/mo</span></div>
+                  </div>
+                  <a class="button" data-stripe-link="rescue-partner" href="#support">Sponsor Mabel — $25/mo</a>
+                </div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="1">
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Goat · Fully Sponsored 🎉</p>
+                  <h3>June</h3>
+                  <p>A brave little escape artist with a second chance and a big personality.</p>
+                  <div class="progress-wrap">
+                    <div class="progress"><span style="width: 0%" data-width="100%"></span></div>
+                    <div class="progress-info"><span>7 sponsors</span><span>Funded! $175/mo</span></div>
+                  </div>
+                  <a class="button secondary" data-stripe-link="rescue-partner" href="#support">Give Anyway</a>
+                </div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="2">
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Pig · Fully Sponsored 🎉</p>
+                  <h3>Otis</h3>
+                  <p>A sanctuary heavyweight with a soft spot for belly rubs and afternoon naps.</p>
+                  <div class="progress-wrap">
+                    <div class="progress"><span style="width: 0%" data-width="100%"></span></div>
+                    <div class="progress-info"><span>13 sponsors</span><span>Funded! $325/mo</span></div>
+                  </div>
+                  <a class="button secondary" data-stripe-link="rescue-partner" href="#support">Give Anyway</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- OUR STORY -->
+        <section id="story" class="section alt">
+          <div class="container story-grid">
+            <div class="story-image" data-reveal>
+              <p class="story-image-quote">"We didn't set out to run a sanctuary. We set out to keep a promise."</p>
+            </div>
+            <div class="story-copy" data-reveal>
+              <p class="eyebrow">Founder Story</p>
+              <h2>Two people. A working farm. A promise rescue doesn't end at intake.</h2>
+              <p>
+                Sterzin Stables is built by a husband and wife who believe sanctuary care should be visible — the hard days, the feed bills, the fencing, the vet appointments, and the small moments when an animal finally exhales.
+              </p>
+              <p>
+                We share everything: the wins, the losses, the 2am barn checks. If you've ever wanted to know what it really takes to give a farm animal a permanent home, follow along.
+              </p>
+              <div class="cta-row" style="margin-top:24px">
+                <a class="button" href="#support">Join The Barn Circle</a>
+                <a class="button secondary" href="#watch-live">Watch Live</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BUILDING THE SANCTUARY -->
+        <section class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Building the Sanctuary</p>
+              <h2>Every fence line, feed bay, and barn light is part of the rescue work.</h2>
+            </div>
+            <div class="grid three">
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Fencing</p><h3>North pasture fencing underway</h3><p>Posts are set for the next rotational grazing zone — more room means healthier animals.</p></div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="1">
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Barn</p><h3>Night check lighting installed</h3><p>Low-glare fixtures make late-night medical checks safer for animals and humans.</p></div>
+              </article>
+              <article class="card" data-reveal data-reveal-delay="2">
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Winter Prep</p><h3>Dry hay storage bay</h3><p>Controlling feed costs before first freeze is how a small sanctuary stays sustainable.</p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUPPORT TIERS -->
+        <section id="support" class="section alt">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">The Barn Circle</p>
+              <h2>Monthly giving built for the real cost of sanctuary.</h2>
+              <p>Choose a recurring tier and become part of the steady support that lets a small sanctuary say yes — responsibly.</p>
+            </div>
+            <div class="grid four">
+              <article class="card tier" data-reveal>
+                <div class="card-body">
+                  <p class="meta">Feed Supporter</p>
+                  <div class="price">$10 <small>/mo</small></div>
+                  <ul class="tier-perks">
+                    <li>Daily feed contribution</li>
+                    <li>Monthly sanctuary update</li>
+                    <li>Name on supporter wall</li>
+                  </ul>
+                  <a class="button secondary" style="width:100%" data-stripe-link="feed-supporter" href="#">Join — $10/mo</a>
+                </div>
+              </article>
+              <article class="card tier featured-tier" data-reveal data-reveal-delay="1">
+                <div class="card-body" style="padding-top:32px">
+                  <p class="meta">Rescue Partner</p>
+                  <div class="price">$25 <small>/mo</small></div>
+                  <ul class="tier-perks">
+                    <li>Sponsor a specific animal</li>
+                    <li>Monthly rescue story</li>
+                    <li>Early access to livestreams</li>
+                    <li>Barn Circle community</li>
+                  </ul>
+                  <a class="button" style="width:100%" data-stripe-link="rescue-partner" href="#">Join — $25/mo</a>
+                </div>
+              </article>
+              <article class="card tier" data-reveal data-reveal-delay="2">
+                <div class="card-body">
+                  <p class="meta">Barn Builder</p>
+                  <div class="price">$50 <small>/mo</small></div>
+                  <ul class="tier-perks">
+                    <li>Fencing &amp; infrastructure fund</li>
+                    <li>Name on a physical barn post</li>
+                    <li>Quarterly video update</li>
+                    <li>All Rescue Partner perks</li>
+                  </ul>
+                  <a class="button secondary" style="width:100%" data-stripe-link="barn-builder" href="#">Join — $50/mo</a>
+                </div>
+              </article>
+              <article class="card tier" data-reveal data-reveal-delay="3">
+                <div class="card-body">
+                  <p class="meta">Sanctuary Guardian</p>
+                  <div class="price">$100 <small>/mo</small></div>
+                  <ul class="tier-perks">
+                    <li>High-impact lifelong care</li>
+                    <li>Personal thank-you video</li>
+                    <li>Annual visit invitation</li>
+                    <li>All Barn Builder perks</li>
+                  </ul>
+                  <a class="button secondary" style="width:100%" data-stripe-link="sanctuary-guardian" href="#">Join — $100/mo</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- EMAIL SIGNUP -->
+        <section class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Weekly Sanctuary Update</p>
+              <h2>Rescue notes, build progress, animal updates — every week.</h2>
+              <p>No fluff. Just what happened this week on the farm.</p>
+            </div>
+            <form class="email-box" data-reveal>
+              <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+              <button class="button" type="submit">Get Updates</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- SHARE STRIP -->
+        <div class="share-strip" data-reveal>
+          <div class="container">
+            <h3>Help Mabel, June &amp; Otis go viral.</h3>
+            <p>Every share brings more eyes — and more sponsors — to the animals who need them most.</p>
+            <div class="share-buttons">
+              <a class="share-btn tiktok" href="#" onclick="shareToTikTok(event)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+                Share on TikTok
+              </a>
+              <a class="share-btn instagram" href="#" onclick="shareToInstagram(event)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Share on Instagram
+              </a>
+              <a class="share-btn facebook" href="#" onclick="shareToFacebook(event)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Share on Facebook
+              </a>
+              <a class="share-btn twitter" href="#" onclick="shareToTwitter(event)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.845L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Share on X
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINAL CTA -->
+        <section class="section final">
+          <div class="container" data-reveal>
+            <p class="eyebrow">A permanent home takes permanent support</p>
+            <h2>Help turn rescue day into every safe day after.</h2>
+            <p class="lead">Recurring donors keep feed stocked, bedding dry, fences strong, and vet care available before a crisis becomes an emergency.</p>
+            <div class="cta-row" style="justify-content: center; margin-top: 36px;">
+              <a class="button" data-stripe-link="rescue-partner" href="#">Join The Barn Circle — $25/mo</a>
+              <a class="button secondary" href="#animals">Sponsor an Animal</a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div>
+            <img src="logo.png" alt="Sterzin Stables" style="height:96px;width:auto;filter:invert(1) brightness(1.0) sepia(0.2) saturate(0.7);margin-bottom:16px;" />
+            <p>A husband-and-wife-run farm animal sanctuary in New York. Every rescue, every build, every second chance — documented and shared.</p>
+            <div class="footer-social">
+              <a href="#" class="social-icon" aria-label="TikTok">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:13px; text-transform:uppercase; letter-spacing:0.14em; margin-bottom:12px; color:rgba(245,235,214,0.35);">Contact</p>
+            <p><a href="mailto:hello@sterzinstables.org" style="transition:color 150ms">hello@sterzinstables.org</a></p>
+            <p style="margin-top:16px; font-size:13px;">501(c)(3) nonprofit · New York</p>
+          </div>
+        </div>
+      </footer>
+
+      <!-- STICKY DONATE -->
+      <div class="sticky-donate">
+        <a class="button" data-stripe-link="rescue-partner" href="#">🐄 Sponsor Monthly — Keep the Promise</a>
+      </div>
+
+    </div><!-- /site-shell -->
+
+    <script>
+      /* ─── STRIPE LINKS ─── */
+      const STRIPE_LINKS = {
+        "feed-supporter": "#",
+        "rescue-partner": "#",
+        "barn-builder": "#",
+        "sanctuary-guardian": "#"
+      };
+
+      document.querySelectorAll("[data-stripe-link]").forEach((link) => {
+        const tier = link.getAttribute("data-stripe-link");
+        const url = STRIPE_LINKS[tier];
+        if (url && url !== "#") {
+          link.setAttribute("href", url);
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener");
+        } else {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.querySelector("#support").scrollIntoView({ behavior: "smooth" });
+          });
+        }
+      });
+
+      /* ─── EMAIL FORM ─── */
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = form.querySelector("input[type='email']");
+          if (input) {
+            input.value = "";
+            input.placeholder = "✓ You're on the list!";
+          }
+        });
+      });
+
+      /* ─── SCROLL REVEAL ─── */
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = entry.target.getAttribute("data-reveal-delay");
+              if (delay) {
+                setTimeout(() => entry.target.classList.add("is-visible"), parseInt(delay) * 100);
+              } else {
+                entry.target.classList.add("is-visible");
+              }
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll("[data-reveal]").forEach((el) => revealObserver.observe(el));
+
+      /* ─── PROGRESS BAR ANIMATION ─── */
+      const progressObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll(".progress span[data-width]").forEach((bar) => {
+                setTimeout(() => {
+                  bar.style.width = bar.getAttribute("data-width");
+                }, 300);
+              });
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      document.querySelectorAll(".card").forEach((card) => progressObserver.observe(card));
+
+      /* ─── SHARE FUNCTIONS ─── */
+      const shareUrl = encodeURIComponent(window.location.href);
+      const shareText = encodeURIComponent("Meet Mabel, June, and Otis — rescued farm animals at Sterzin Stables in New York. A husband & wife are giving them a forever home, and you can help. 🐄🐐🐷");
+
+      function shareToFacebook(e) {
+        e.preventDefault();
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`, '_blank', 'width=600,height=400');
+      }
+
+      function shareToTwitter(e) {
+        e.preventDefault();
+        window.open(`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`, '_blank', 'width=600,height=400');
+      }
+
+      function shareToInstagram(e) {
+        e.preventDefault();
+        if (navigator.share) {
+          navigator.share({ title: 'Sterzin Stables', text: decodeURIComponent(shareText), url: window.location.href });
+        } else {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            e.target.textContent = '✓ Link Copied!';
+            setTimeout(() => e.target.textContent = 'Share on Instagram', 2000);
+          });
+        }
+      }
+
+      function shareToTikTok(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const btn = e.currentTarget;
+          const original = btn.innerHTML;
+          btn.textContent = '✓ Link Copied — Paste in TikTok Bio!';
+          setTimeout(() => btn.innerHTML = original, 3000);
+        });
+      }
+    </script>
+  </body>
+</html>
