@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sterzin Stables | New York Farm Animal Sanctuary</title>
+    <meta
+      name="description"
+      content="Sterzin Stables is a husband-and-wife-run farm animal sanctuary in New York giving rescued farm animals a safe, permanent home."
+    />
+    <meta
+      name="keywords"
+      content="farm animal sanctuary NY, New York farm sanctuary, sponsor rescued farm animals, animal sanctuary livestream, donate to farm animal rescue, husband and wife animal sanctuary"
+    />
+    <meta property="og:title" content="Sterzin Stables" />
+    <meta
+      property="og:description"
+      content="Sponsor rescued farm animals and follow every rescue, build, and second chance."
+    />
+    <meta property="og:image" content="images/sanctuary-hero.png" />
+    <style>
+      :root {
+        --charcoal: #090c0a;
+        --charcoal-2: #101410;
+        --charcoal-3: #182018;
+        --cream: #f7edda;
+        --muted: rgba(247, 237, 218, 0.66);
+        --soft: rgba(247, 237, 218, 0.12);
+        --forest: #6f8f58;
+        --hay: #c79b4b;
+        --barn: #7a4230;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--charcoal);
+        color: var(--cream);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .site-shell {
+        overflow: hidden;
+      }
+
+      .header {
+        position: fixed;
+        z-index: 20;
+        inset: 0 0 auto;
+        border-bottom: 1px solid var(--soft);
+        background: rgba(9, 12, 10, 0.78);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        max-width: 1180px;
+        height: 68px;
+        margin: 0 auto;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(199, 155, 75, 0.45);
+        background: rgba(199, 155, 75, 0.11);
+        color: var(--hay);
+        font-weight: 900;
+      }
+
+      .brand-title {
+        display: block;
+        font-size: 13px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        white-space: nowrap;
+      }
+
+      .brand-subtitle {
+        display: block;
+        margin-top: 2px;
+        color: rgba(247, 237, 218, 0.54);
+        font-size: 12px;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 24px;
+        color: rgba(247, 237, 218, 0.7);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        background: var(--hay);
+        color: var(--charcoal);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        cursor: pointer;
+        transition:
+          transform 160ms ease,
+          background 160ms ease,
+          border-color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: var(--cream);
+      }
+
+      .button.secondary {
+        border-color: rgba(247, 237, 218, 0.22);
+        background: rgba(247, 237, 218, 0.05);
+        color: var(--cream);
+      }
+
+      .button.secondary:hover {
+        border-color: rgba(199, 155, 75, 0.7);
+        background: rgba(199, 155, 75, 0.12);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        padding: 116px 18px 78px;
+        background-image:
+          linear-gradient(90deg, rgba(9, 12, 10, 0.94), rgba(9, 12, 10, 0.56), rgba(9, 12, 10, 0.18)),
+          linear-gradient(0deg, rgba(9, 12, 10, 0.96), transparent 38%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 18px;
+        color: var(--hay);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 22px;
+        max-width: 820px;
+        font-size: clamp(52px, 12vw, 108px);
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(34px, 7vw, 58px);
+        line-height: 1;
+        letter-spacing: -0.035em;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        line-height: 1.1;
+      }
+
+      .lead {
+        max-width: 680px;
+        color: rgba(247, 237, 218, 0.78);
+        font-size: clamp(18px, 4vw, 22px);
+        line-height: 1.55;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .impact {
+        border-top: 1px solid var(--soft);
+        border-bottom: 1px solid var(--soft);
+        background: var(--charcoal-2);
+      }
+
+      .impact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        padding: 12px 18px;
+      }
+
+      .impact-item {
+        padding: 18px;
+        background: rgba(247, 237, 218, 0.035);
+      }
+
+      .impact-item strong {
+        display: block;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      .impact-item span {
+        display: block;
+        margin-top: 8px;
+        color: rgba(247, 237, 218, 0.5);
+        font-size: 12px;
+      }
+
+      .section {
+        padding: 78px 18px;
+        background: var(--charcoal);
+      }
+
+      .section.alt {
+        background: var(--charcoal-2);
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 34px;
+      }
+
+      .section-heading p {
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.65;
+      }
+
+      .featured {
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 6px;
+        background: var(--charcoal-2);
+      }
+
+      .featured-image {
+        min-height: 380px;
+        background-image:
+          linear-gradient(0deg, rgba(9, 12, 10, 0.88), transparent 48%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .featured-copy {
+        padding: 28px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .card {
+        overflow: hidden;
+        border: 1px solid var(--soft);
+        border-radius: 6px;
+        background: rgba(247, 237, 218, 0.035);
+      }
+
+      .card-media {
+        position: relative;
+        min-height: 255px;
+        background-image:
+          linear-gradient(0deg, rgba(9, 12, 10, 0.84), transparent 58%),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .card-body {
+        padding: 22px;
+      }
+
+      .meta {
+        color: rgba(247, 237, 218, 0.5);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .card p,
+      .featured-copy p,
+      .story-copy p {
+        color: rgba(247, 237, 218, 0.64);
+        line-height: 1.65;
+      }
+
+      .progress {
+        height: 8px;
+        margin: 18px 0 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: rgba(247, 237, 218, 0.1);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--hay);
+      }
+
+      .cam {
+        min-height: 220px;
+        display: grid;
+        place-items: center;
+        background-image:
+          linear-gradient(rgba(9, 12, 10, 0.55), rgba(9, 12, 10, 0.8)),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .play {
+        display: grid;
+        place-items: center;
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+        background: rgba(247, 237, 218, 0.92);
+        color: var(--charcoal);
+        font-weight: 900;
+      }
+
+      .tier {
+        min-height: 100%;
+      }
+
+      .price {
+        margin: 16px 0;
+        font-size: 48px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+
+      .price small {
+        color: rgba(247, 237, 218, 0.55);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .story-grid {
+        display: grid;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .story-image {
+        min-height: 420px;
+        border: 1px solid var(--soft);
+        border-radius: 6px;
+        background-image:
+          linear-gradient(0deg, rgba(9, 12, 10, 0.78), transparent),
+          url("images/sanctuary-hero.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .email-box {
+        display: grid;
+        gap: 12px;
+      }
+
+      input {
+        min-height: 50px;
+        width: 100%;
+        border: 1px solid rgba(247, 237, 218, 0.18);
+        border-radius: 2px;
+        background: rgba(9, 12, 10, 0.72);
+        color: var(--cream);
+        padding: 0 15px;
+        font: inherit;
+      }
+
+      .final {
+        text-align: center;
+      }
+
+      .final .lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer {
+        padding: 54px 18px 98px;
+        border-top: 1px solid var(--soft);
+        background: var(--charcoal);
+        color: rgba(247, 237, 218, 0.6);
+      }
+
+      .footer-grid {
+        display: grid;
+        gap: 28px;
+      }
+
+      .sticky-donate {
+        position: fixed;
+        z-index: 30;
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+      }
+
+      .sticky-donate .button {
+        width: 100%;
+      }
+
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 600ms ease,
+          transform 600ms ease;
+      }
+
+      [data-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (min-width: 700px) {
+        .cta-row,
+        .email-box {
+          grid-template-columns: 1fr auto;
+          display: grid;
+        }
+
+        .cta-row {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .grid.two {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.three {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .grid.four {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .featured {
+          display: grid;
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+
+        .featured-copy {
+          padding: 48px;
+        }
+
+        .story-grid {
+          grid-template-columns: 0.9fr 1.1fr;
+        }
+      }
+
+      @media (min-width: 980px) {
+        .nav-links {
+          display: flex;
+        }
+
+        .impact-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .grid.four {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .sticky-donate {
+          left: auto;
+          width: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="header">
+        <nav class="nav" aria-label="Primary navigation">
+          <a class="brand" href="#top">
+            <span class="brand-mark">SS</span>
+            <span>
+              <span class="brand-title">Sterzin Stables</span>
+              <span class="brand-subtitle">Farm Animal Sanctuary NY</span>
+            </span>
+          </a>
+          <div class="nav-links">
+            <a href="#animals">Animals</a>
+            <a href="#watch-live">Watch Live</a>
+            <a href="#rescues">Rescues</a>
+            <a href="#story">Our Story</a>
+            <a href="#support">Support</a>
+          </div>
+          <a class="button secondary" href="#animals">Sponsor</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="container hero-copy" data-reveal>
+            <p class="eyebrow">Husband & Wife Run in New York</p>
+            <h1>Every Rescue Deserves A Forever Home.</h1>
+            <p class="lead">
+              Sterzin Stables is a husband-and-wife-run farm animal sanctuary in New York
+              dedicated to rescue, recovery, and lifelong care.
+            </p>
+            <div class="cta-row">
+              <a class="button" href="#animals">Sponsor an Animal</a>
+              <a class="button secondary" href="#watch-live">Watch Live</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="impact">
+          <div class="container impact-grid">
+            <div class="impact-item"><strong>Husband & Wife Run</strong><span>Live sanctuary impact</span></div>
+            <div class="impact-item"><strong>Farm Animal Sanctuary</strong><span>Permanent homes</span></div>
+            <div class="impact-item"><strong>Built in New York</strong><span>Rural rescue work</span></div>
+            <div class="impact-item"><strong>Monthly Donors Needed</strong><span>The care continues</span></div>
+          </div>
+        </section>
+
+        <section id="rescues" class="section">
+          <div class="container">
+            <article class="featured" data-reveal>
+              <div class="featured-image" aria-label="Featured rescue image"></div>
+              <div class="featured-copy">
+                <p class="eyebrow">Featured Rescue</p>
+                <h2>Mabel's First Winter Safe</h2>
+                <p>
+                  A senior cow, a hard freeze, and the work of earning trust one morning at a time.
+                  Recovery is not a single rescue day. It is every morning after.
+                </p>
+                <div class="cta-row">
+                  <a class="button" href="#support">Sponsor Mabel</a>
+                  <a class="button secondary" href="#animals">Meet the Animals</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="watch-live" class="section alt">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Watch Live</p>
+              <h2>The sanctuary, unfolding in real time.</h2>
+              <p>
+                These camera cards are ready to replace with YouTube embeds when each livestream goes live.
+              </p>
+            </div>
+            <div class="grid four">
+              <article class="card" data-reveal>
+                <div class="cam"><span class="play">LIVE</span></div>
+                <div class="card-body"><h3>Barn Cam</h3><p>YouTube embed ready.</p></div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="cam"><span class="play">LIVE</span></div>
+                <div class="card-body"><h3>Pasture Cam</h3><p>Coming online soon.</p></div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="cam"><span class="play">LIVE</span></div>
+                <div class="card-body"><h3>Feeding Cam</h3><p>Morning and evening checks.</p></div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="cam"><span class="play">LIVE</span></div>
+                <div class="card-body"><h3>Night Cam</h3><p>Quiet hours preview.</p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="animals" class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Meet the Animals</p>
+              <h2>Sponsor the daily care behind every second chance.</h2>
+              <p>
+                Each sponsorship helps cover feed, bedding, veterinary support, fencing,
+                and the invisible work of lifelong sanctuary care.
+              </p>
+            </div>
+            <div class="grid three">
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Cow / Available for Sponsorship</p>
+                  <h3>Mabel</h3>
+                  <p>A gentle senior cow learning that quiet mornings can be safe.</p>
+                  <div class="progress"><span style="width: 61%"></span></div>
+                  <p>11 sponsors toward $450/mo care.</p>
+                  <a class="button" data-stripe-link="rescue-partner" href="#support">Sponsor Mabel</a>
+                </div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Goat / Available for Sponsorship</p>
+                  <h3>June</h3>
+                  <p>A brave little escape artist with a second chance and a big voice.</p>
+                  <div class="progress"><span style="width: 100%"></span></div>
+                  <p>7 sponsors toward $175/mo care.</p>
+                  <a class="button" data-stripe-link="rescue-partner" href="#support">Sponsor June</a>
+                </div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body">
+                  <p class="meta">Pig / Available for Sponsorship</p>
+                  <h3>Otis</h3>
+                  <p>A sanctuary heavyweight with a soft spot for belly rubs.</p>
+                  <div class="progress"><span style="width: 100%"></span></div>
+                  <p>13 sponsors toward $325/mo care.</p>
+                  <a class="button" data-stripe-link="rescue-partner" href="#support">Sponsor Otis</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="story" class="section alt">
+          <div class="container story-grid">
+            <div class="story-image" data-reveal></div>
+            <div class="story-copy" data-reveal>
+              <p class="eyebrow">Founder Story</p>
+              <h2>Two people, a working farm, and a promise that rescue does not end at intake.</h2>
+              <p>
+                Sterzin Stables is being built by a husband and wife who believe sanctuary care
+                should be visible: the hard days, the feed bills, the fencing, the veterinary
+                appointments, and the small moments when an animal finally exhales.
+              </p>
+              <a class="button secondary" href="#support">Join The Barn Circle</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Building the Sanctuary</p>
+              <h2>Every fence line, feed bay, and barn light is part of the rescue work.</h2>
+            </div>
+            <div class="grid three">
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Fencing</p><h3>North pasture fencing is underway</h3><p>Posts are set for the next rotational grazing zone.</p></div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Barn</p><h3>Night check lighting in the barn</h3><p>Low-glare fixtures make late-night medical checks easier.</p></div>
+              </article>
+              <article class="card" data-reveal>
+                <div class="card-media"></div>
+                <div class="card-body"><p class="meta">Winter Prep</p><h3>Winter hay storage plan</h3><p>A dry storage bay helps control feed costs before first freeze.</p></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="support" class="section alt">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">The Barn Circle</p>
+              <h2>Monthly giving built for the real cost of sanctuary.</h2>
+              <p>Choose a recurring tier and become part of the steady support that lets a small sanctuary say yes responsibly.</p>
+            </div>
+            <div class="grid four">
+              <article class="card tier" data-reveal>
+                <div class="card-body">
+                  <p class="meta">Feed Supporter</p>
+                  <div class="price">$10 <small>/month</small></div>
+                  <p>Helps cover daily feed and basic care.</p>
+                  <a class="button" data-stripe-link="feed-supporter" href="#">Join</a>
+                </div>
+              </article>
+              <article class="card tier" data-reveal>
+                <div class="card-body">
+                  <p class="meta">Rescue Partner</p>
+                  <div class="price">$25 <small>/month</small></div>
+                  <p>Supports rescue, recovery, and monthly care.</p>
+                  <a class="button" data-stripe-link="rescue-partner" href="#">Join</a>
+                </div>
+              </article>
+              <article class="card tier" data-reveal>
+                <div class="card-body">
+                  <p class="meta">Barn Builder</p>
+                  <div class="price">$50 <small>/month</small></div>
+                  <p>Helps fund fencing, shelter, hay, and infrastructure.</p>
+                  <a class="button" data-stripe-link="barn-builder" href="#">Join</a>
+                </div>
+              </article>
+              <article class="card tier" data-reveal>
+                <div class="card-body">
+                  <p class="meta">Sanctuary Guardian</p>
+                  <div class="price">$100 <small>/month</small></div>
+                  <p>Provides high-impact support for lifelong care.</p>
+                  <a class="button" data-stripe-link="sanctuary-guardian" href="#">Join</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="section-heading" data-reveal>
+              <p class="eyebrow">Weekly Sanctuary Update</p>
+              <h2>Get the rescue notes, build progress, and animal updates.</h2>
+            </div>
+            <form class="email-box" data-reveal>
+              <input type="email" placeholder="Email address" aria-label="Email address" required />
+              <button class="button secondary" type="submit">Get Updates</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="section final">
+          <div class="container" data-reveal>
+            <p class="eyebrow">A permanent home takes permanent support</p>
+            <h2>Help turn rescue day into every safe day after.</h2>
+            <p class="lead">
+              Recurring donors keep feed stocked, bedding dry, fences strong, and veterinary care
+              available before a crisis becomes an emergency.
+            </p>
+            <div class="cta-row" style="justify-content: center">
+              <a class="button" data-stripe-link="rescue-partner" href="#">Join The Barn Circle</a>
+              <a class="button secondary" href="#animals">Sponsor an Animal</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-grid">
+          <div>
+            <p class="eyebrow">Sterzin Stables</p>
+            <p>
+              A husband-and-wife-run farm animal sanctuary in New York documenting every rescue,
+              every build, and every second chance.
+            </p>
+          </div>
+          <p>hello@sterzinstables.org</p>
+        </div>
+      </footer>
+
+      <div class="sticky-donate">
+        <a class="button" data-stripe-link="rescue-partner" href="#">Sponsor Monthly</a>
+      </div>
+    </div>
+
+    <script>
+      /*
+        Replace these # values with Stripe Payment Links.
+        Create them in Stripe Dashboard > Payment Links.
+        This static version does not use STRIPE_SECRET_KEY because website builders usually cannot run backend API routes.
+      */
+      const STRIPE_LINKS = {
+        "feed-supporter": "#",
+        "rescue-partner": "#",
+        "barn-builder": "#",
+        "sanctuary-guardian": "#"
+      };
+
+      document.querySelectorAll("[data-stripe-link]").forEach((link) => {
+        const tier = link.getAttribute("data-stripe-link");
+        const url = STRIPE_LINKS[tier];
+        if (url && url !== "#") {
+          link.setAttribute("href", url);
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener");
+        } else {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            document.querySelector("#support").scrollIntoView({ behavior: "smooth" });
+          });
+        }
+      });
+
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+          const input = form.querySelector("input[type='email']");
+          if (input) {
+            input.value = "";
+            input.placeholder = "Thanks. You are on the list.";
+          }
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add("is-visible");
+          });
+        },
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll("[data-reveal]").forEach((element) => observer.observe(element));
+    </script>
+  </body>
+</html>
